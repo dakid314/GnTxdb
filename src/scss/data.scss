@@ -1,0 +1,10 @@
+.table_container {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+}
+
+.table_render_layer {
+    flex: 1;
+    display: flex;
+    margin: 10px; /* 可根据需要调整表格之间的间距 */
+}

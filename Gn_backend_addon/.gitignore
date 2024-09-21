@@ -1,0 +1,12 @@
+.vscode
+tmp
+__pycache__
+log
+src/template
+.tmp
+lib/StructurePrediction
+._.DS_Store
+.DS_Store
+out
+*.private
+/mnt/md0/Public/一站式/txseml_backend_addon/lib/model/T3

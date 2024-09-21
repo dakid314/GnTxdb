@@ -1,0 +1,10 @@
+# vscode
+.vscode
+
+# nodejs
+node_modules
+tmp
+dist
+php
+src/assets/data
+config

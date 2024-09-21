@@ -1,0 +1,153 @@
+@keyframes shadowcome {
+    from {
+        font-size: 26px;
+        // text-shadow: 9px 7px 2px rgba(192, 215, 239, 0.25);;
+        color: rgba(77, 102, 160, 0.95);
+    }
+
+    to {
+        transition-duration: 0.5s;
+        font-size: 30px;
+        // text-shadow: 3px 3px 1px rgba(192, 215, 239, 0.25);
+        color: rgba(77, 102, 160, 0.95);
+    }
+}
+
+@keyframes shadowback {
+    to {
+        font-size: 26px;
+        // text-shadow: 9px 7px 2px rgba(192, 215, 239, 0.25);
+        color: rgba(77, 102, 160, 0.95);
+    }
+
+    from {
+        transition-duration: 0.5s;
+        font-size: 30px;
+        // text-shadow: 3px 3px 1px rgba(192, 215, 239, 0.25);
+        color: rgba(77, 102, 160, 0.95);
+    }
+}
+
+nav#menu>li,
+footer>.footer-nav>a {
+    // background-color: transparent;
+    background-color: transparent;
+}
+
+nav#menu>ul>li:hover,
+footer>div.footer-nav>a:hover {
+    transition: background-color 0.5s 0.1s;
+    background-color: rgb(218, 227, 237);
+
+    a {
+        color: inherit;
+    }
+
+    border-radius: 9px;
+}
+
+#page-title_ {
+    box-shadow: -1px 1px 1px 1px rgba(0, 0, 0, 0.15);
+    border-radius: 1%;
+    margin-top: -76px;
+    margin-left: -170px;
+    margin-right: -170px;
+    background-image: linear-gradient(rgba(252, 115, 7, 0.05), rgba(35, 106, 185, 0.05));
+    height: 274px;
+}
+
+#teamlogo {
+    filter: drop-shadow(5px 5px 5px rgb(0 0 0 / 50%));
+}
+
+header {
+    width: 100%;
+    border-radius: 0% 0% 2% 2%;
+    // div#header-container a.text2:hover {
+    //     transition:
+    //     background-color 0.5s 0.1s;
+    //     background-color:azure;
+    //     a{color: inherit;}
+    //     border-radius: 9px;
+    //     text-shadow: none;
+    // };
+}
+
+#HCD-Lab {
+    animation: shadowback 0.5s ease-in-out 0s 1 normal forwards;
+}
+
+#HCD-Lab:hover {
+    animation: shadowcome 0.5s ease-in-out 0s 1 normal forwards;
+}
+
+h1 {
+    margin: initial;
+}
+
+table {
+
+    caption {
+        border-color: #6b77bba0;
+        border-radius: 0.5em;
+        padding-top: 5px;
+        padding-bottom: 2px;
+        caption-side: top;
+        text-align: center;
+        font-family: initial;
+        line-height: initial;
+        font-size: initial;
+        color: initial;
+        font-weight: initial;
+    }
+
+    table-layout: fixed;
+
+    border-collapse: collapse;
+    // margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    // box-shadow: 0 0 20px rgba(0, 0, 0, 0.096);
+
+    th,
+    td {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    thead tr {
+        table-layout: fixed;
+        background-color: #53a7c7;
+        color: #ffffff;
+        text-align: left;
+    }
+
+    tbody {
+        table-layout: fixed;
+
+        tr {
+            border-bottom: 1px solid #dddddd;
+            // cursor: pointer;
+
+            td {
+                word-wrap: break-word;
+            }
+        }
+
+        tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        tr:last-of-type {
+            border-bottom: 2px solid #6b77bb;
+        }
+
+        tr.focus {
+            background-color: #2d3666;
+
+            td {
+                color: #ffffff
+            }
+        }
+    }
+}

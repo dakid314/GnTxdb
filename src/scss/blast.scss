@@ -1,0 +1,187 @@
+#predictor_root {
+    #predictor_form_header_text {
+        background-color: #2d3666;
+        color: white;
+        text-align: center;
+        border-radius: 20px;
+        width: 90%;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 0px;
+    }
+
+    #predictor_form_root {
+        align-items: center;
+        border-width: 5px;
+        border-style: solid;
+        border-radius: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: grid;
+        align-items: start;
+        grid-template-rows: auto;
+        grid-template-columns: repeat(2, 1fr);
+        text-align: start;
+        margin-bottom: 5px;
+        row-gap: 5px;
+        column-gap: 5px;
+
+        // >div[form_div] {
+        //     border-style: solid;
+        //     border-width: 2px;
+        //     border-radius: 10px;
+        //     border-color: rgba(0, 0, 0, 0.5);
+        // }
+
+        div[form_div=form_uuid] {
+
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            input {
+                width: 100%;
+            }
+        }
+
+        div#prot_type_box {
+            display: flex;
+            flex-wrap: wrap;
+            // width: 100%;
+            flex-direction: row;
+
+            justify-content: space-around;
+
+            background: #66666611;
+            border-radius: 5px;
+
+            margin-left: 10%;
+            margin-right: 10%;
+
+            div.prottype_container {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+
+        div[form_div=form_fasta_text_display_box] {
+            grid-column: 1 / span 2;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+
+            label {
+                white-space: nowrap;
+            }
+
+            textarea {
+                width: 100%;
+                height: 15vh;
+                line-height: 1.0em;
+                padding: 3px;
+            }
+        }
+
+        div[form_div=form_fasta] {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+
+            label {
+                white-space: nowrap;
+            }
+
+            input[type='file'] {
+                width: 100%;
+
+                ::-webkit-file-upload-button {
+                    height: initial;
+                }
+            }
+        }
+
+        div[form_div=form_submit_button] {
+            display: flex;
+
+            justify-content: space-around;
+
+            button {
+                width: 33%;
+                border-style: none;
+                border-radius: 20px;
+            }
+        }
+
+        div[form_div=form_modelselect] {
+            grid-column: 1 / span 2;
+
+            div#model_select_box {
+                display: flex;
+                width: 100%;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                flex-direction: row;
+
+                div.modelselect_container {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    margin-left: 10px;
+                    margin-right: 10px;
+                }
+            }
+
+            #mode_choise_display_box {
+                display: inline-block;
+                background-color: #2d366610;
+
+                >label {
+                    padding-left: 5px;
+                }
+
+                .mode_container {
+                    label {
+                        margin-right: 0px;
+                    }
+                }
+            }
+        }
+
+        div[form_div=form_email],
+        div[form_div=form_usage] {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+
+            input[type] {
+                width: 100%;
+            }
+
+        }
+
+        label {
+            margin-right: 10px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+    }
+
+    @media only screen and (max-width: 540px) {
+        #predictor_form_root {
+            grid-template-columns: repeat(1, 1fr);
+
+            div[form_div=form_modelselect],
+            div[form_div=form_fasta_text_display_box],
+            div[form_div=form_more] {
+                grid-column: 1 / span 1;
+            }
+        }
+
+    }
+}

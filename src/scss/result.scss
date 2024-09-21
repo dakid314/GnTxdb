@@ -1,0 +1,140 @@
+#search_header {
+    background-color: #2d3666;
+    color: white;
+    text-align: center;
+    border-radius: 20px;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 0px;
+}
+
+div[form_div=form_search] {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+
+
+    label {
+        white-space: nowrap;
+        margin-bottom: 0px;
+    }
+
+    input[type='jobid'] {
+        line-height: 1.0em;
+        font-size: inherit;
+    }
+
+    button {
+        border-radius: 10px;
+    }
+}
+
+#result_render_dom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+}
+
+#table_render_dom {
+    overflow: scroll;
+    scrollbar-width: 1px;
+    max-height: 360px;
+
+    &::-webkit-scrollbar-button {
+        display: none;
+    }
+
+}
+
+#result_render_box {
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px 3px;
+    padding: 20px;
+
+    div.table_wa {
+        max-height: 540px;
+
+    }
+}
+
+#running_render_dom {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    height: 360px;
+}
+
+table {
+
+    caption {
+        border-color: #6b77bba0;
+        border-radius: 0.5em;
+        padding-top: 5px;
+        padding-bottom: 2px;
+        caption-side: top;
+        text-align: center;
+        font-family: initial;
+        line-height: initial;
+        font-size: initial;
+        color: initial;
+        font-weight: initial;
+    }
+
+    table-layout: fixed;
+
+    border-collapse: collapse;
+    // margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    // box-shadow: 0 0 20px rgba(0, 0, 0, 0.096);
+
+    th,
+    td {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    thead tr {
+        table-layout: fixed;
+        background-color: #6b77bb;
+        color: #ffffff;
+        text-align: left;
+    }
+
+    tbody {
+        table-layout: fixed;
+
+        tr {
+            border-bottom: 1px solid #dddddd;
+            // cursor: pointer;
+
+            td {
+                word-wrap: break-word;
+            }
+        }
+
+        tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        tr:last-of-type {
+            border-bottom: 2px solid #6b77bb;
+        }
+
+        tr.focus {
+            background-color: #2d3666;
+
+            td {
+                color: #ffffff
+            }
+        }
+    }
+}

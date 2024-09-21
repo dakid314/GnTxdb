@@ -1,0 +1,115 @@
+.outline-box {
+    border-radius: 9px;
+    box-shadow: 3px 3px 3px 3px rgb(0 0 0 / 10%);
+    transform: 
+        scale(1)
+        translateY(0px);
+};
+
+.outline-box:hover {
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    box-shadow: 5px 5px 5px 5px rgb(0 0 0 / 15%);
+    transform: 
+        scale(1.05)
+        translateY(-10px);
+    transition:
+        transform 1s 0.5s
+        box-shadow 0.5s 0.5s;
+    z-index: 0;
+};
+
+div#proteindisCription {
+    > * {
+        padding: 1%;
+    }
+
+    margin-top: 110px;
+    border-radius: 10px;
+    // background-image: linear-gradient(rgb(252 115 7 /5%),rgb(35 106 185 /5%) );
+    background-color:rgb(242, 242, 242);
+    width: 850px;
+    position: relative;
+    #desc_head {
+        padding-top: 3%;
+        padding-bottom: -15%;
+    }
+    #maintext{
+        padding: 3%;
+        padding-top: -10%;
+    }
+    #proTotal {
+        box-shadow: 3px 3px 3px 3px rgb(0 0 0 / 15%);
+        border-radius: 10px;
+    };
+};
+
+div#proteindisCription_re {
+    padding: 1%;
+    border-radius: 10px;
+    background-color: rgb(242, 242, 242);
+    width: 250px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-5%);
+    margin-top: 20px;
+    margin-right: -300px;
+}
+
+#desc_head {
+    padding-top: 3%;
+    padding-bottom: -15%;
+}
+
+#maintext {
+    padding: 3%;
+    padding-top: -10%;
+}
+
+#proTotal {
+    box-shadow: 3px 3px 3px 3px rgb(0 0 0 / 15%);
+    border-radius: 10px;
+}
+
+
+#service-cardbox {
+    border-radius: 1%;
+    border-color: rgb(0 0 0 / 10%);
+    animation: scaleback 0.3s ease-in-out 0.0s 1 normal forwards;
+    // box-shadow: 1px 1px 1px 1px rgb(0 0 0 / 10%);
+};
+
+@keyframes scale {
+    from {
+        transform: scale(1.0);
+        transition-duration: 0.2s;
+        transition-timing-function: ease-in-out;
+        box-shadow: 2px 2px 1px 1px rgb(0 0 0 / 3%);
+    }
+    to {
+        transform: scale(1.01);
+        transition-duration: 0.2s;
+        transition-timing-function: ease-in-out;
+        box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 1%);
+    }
+}
+
+@keyframes scaleback {
+    from {
+        transform: scale(1.01);
+        transition-duration: 0.2s;
+        transition-timing-function: ease-in-out;
+        box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 1%);
+    }
+    to {
+        transform: scale(1.0);
+        transition-duration: 0.2s;
+        transition-timing-function: ease-in-out;
+        box-shadow: 2px 2px 1px 1px rgb(0 0 0 / 3%);
+    }
+}
+
+#service-cardbox:hover {
+    animation: scale 0.3s ease-in-out 0.0s 1 normal forwards;
+};

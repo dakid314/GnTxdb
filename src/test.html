@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>展示Excel数据</title>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.0/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+    <h1>展示Excel数据</h1>
+    <label for="sheetSelect">选择工作表：</label>
+    <select id="sheetSelect" onchange="loadSheet(this.value)">
+        <option value="">请选择</option>
+    </select>
+    <table id="excelDataTable" border="1">
+        <!-- 表格数据将动态填充 -->
+    </table>
+
+    <script>
+        // JavaScript部分
+        async function loadSheet(sheetName) {
+            const fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.accept = '.xlsx, .xls';
+
+            await new Promise(resolve => {
+                fileInput.onchange = () => resolve();
+                fileInput.click();
+            });
+
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(event) {
+                const data = new Uint8Array(event.target.result);
+                const workbook = XLSX.read(data, { type: 'array' });
+
+                // 填充选择框中的选项
+                const select = document.getElementById('sheetSelect');
+                select.innerHTML = '<option value="">请选择</option>';
+                workbook.SheetNames.forEach(sheetName => {
+                    const option = document.createElement('option');
+                    option.value = sheetName;
+                    option.textContent = sheetName;
+                    select.appendChild(option);
+                });
+
+                // 如果指定了sheetName，则加载该sheet的数据
+                if (sheetName) {
+                    const sheet = workbook.Sheets[sheetName];
+                    const excelDataTable = document.getElementById('excelDataTable');
+                    excelDataTable.innerHTML = XLSX.utils.sheet_to_html(sheet);
+                }
+            };
+
+            reader.readAsArrayBuffer(file);
+        }
+    </script>
+</body>
+</html>
+
+let sheets = [
+  { name: 'Sheet1', data: yourDataObjectForSheet1 },
+  { name: 'Sheet2', data: yourDataObjectForSheet2 }, // 添加更多工作表数据
+  // ...
+];
+
+// 修改 render_table 函数
+function render_table(data, width, chartwOther = undefined, table_head = undefined) {
+  // ... 函数的其他部分保持不变 ...
+  
+  // 新增添加底部切换按钮的部分
+  let tfoot_dom = document.createElement("tfoot");
+  sheets.forEach((sheet) => {
+    let button = document.createElement("button");
+    button.innerText = sheet.name;
+    button.addEventListener("click", () => {
+      // 这里需要根据你想要的行为进行操作，例如更新数据并重新渲染表格
+      // 重新渲染表格的例子
+      console.log("更新数据 " + sheet.data);
+      // render_table(sheet.data, width, undefined, table_head);  // 需要实际更新表格的渲染，这里仅作示例
+    });
+    tfoot_dom.appendChild(button);
+  });
+  table_dom.appendChild(tfoot_dom);
+
+  return table_dom;
+}
+
+// 用法示例
+let data1 = {
+  "Name": ["Alice", "Bob", "Cathy"],
+  "Age": ["30", "25", "22"]
+};
+let data2 = {
+  "Name": ["Dave", "Eve", "Frank"]}
